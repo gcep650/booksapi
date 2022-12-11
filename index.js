@@ -1,6 +1,7 @@
 const { BookModel } = require("./lib/app/models/BookModel");
 const { BooksDAO } = require("./lib/app/database/BooksDAO");
 const bodyParser = require('body-parser');
+const cors = require('cors')
 
 const express = require('express');
 const app = express();
@@ -11,6 +12,7 @@ app.listen(port, function () {
 });
 
 app.use(bodyParser.json());
+app.use(cors());
 
 // database config
 const dbHost = 'localhost'
